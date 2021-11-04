@@ -11,7 +11,12 @@ require 'minitest/autorun'
 # require application components
 require './pokedex_app.rb'
 require 'json'
+require 'vcr'
 
+VCR.configure do |config|
+  config.cassette_library_dir = "fixtures/vcr_cassettes"
+  config.hook_into :webmock
+end
 class BaseSpec < Minitest::Spec
   def self.expand_path(path)
     File.expand_path(path, __FILE__)
