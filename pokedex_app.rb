@@ -1,13 +1,18 @@
 # frozen_string_literal: true
 
 require_relative './services/pokemon_details_fetcher'
+require_relative './exceptions/network_error'
 
 # Pokedox Sinatra APP
 class PokedexApp < Sinatra::Application
   enable :sessions
 
   get '/' do
-    @pokemon = PokemonDetailsFetcher.fetch_random_pokemon_data
+    begin
+      @pokemon = PokemonDetailsFetcher.fetch_random_pokemon_data
+    rescue NetworkError
+      @error_message = 'Pokedox API network request unsuccessful!! Try reloading the page again!'
+    end
     display_page :index
   end
 

@@ -1,27 +1,29 @@
-#index.container.my-5.p-3
-  %h3 Here is your random lucky pokemon
-  %br
-  .name
-    %span="Name : "
-    %span=@pokemon.name.upcase
-  %br
-  .image
-    %span="Image : "
-    %img{ src: @pokemon.image_url }
-  %br
-  .height
-    %span="Height : "
-    %span=@pokemon.height
-  %br
-  .weight
-    %span="Weight : "
-    %span=@pokemon.weight
-  %br
-  .species
-    %span="Species : "
-    %span=@pokemon.species
-  %br
-  .location-names
-    %span="Location Names : "
-    %span=@pokemon.location_names.join(", ")
-
+- if @error_message
+  .error-message=@error_message
+- else
+  #index.container.my-5.p-3
+    %h3 Here is your random lucky pokemon
+    %br
+    .name
+      %span="Name : "
+      %span=@pokemon.name.upcase
+    %br
+    .image
+      %span="Image : "
+      %img{ src: @pokemon.image_url }
+    %br
+    .height
+      %span="Height : "
+      %span=@pokemon.height
+    %br
+    .weight
+      %span="Weight : "
+      %span=@pokemon.weight
+    %br
+    .species
+      %span="Species : "
+      %span=@pokemon.species
+    %br
+    .location-names
+      %span="Location Names : "
+      %span=@pokemon.location_names.join(", ")
