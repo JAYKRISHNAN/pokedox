@@ -1,4 +1,10 @@
 # Coding Task
+### Sample Screenshot
+
+![Pokedox sample screenshot](https://user-images.githubusercontent.com/4848551/140314087-f88a802c-fce2-4ab1-bcda-38a77c49f24b.png)
+
+
+
 
 ### Context:
 
