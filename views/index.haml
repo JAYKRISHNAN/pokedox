@@ -1,7 +1,4 @@
 #index.container.my-5.p-3
-  %h1.p-3 Welcome to the Finiata Pokedex!
-
-#index.container.my-5.p-3
-  %marquee{ direction: 'right' }
-    %h1.p-3 Hello World!
-    %img{ src: './images/nyan-cat.gif' }
+  %h1.p-3 Here is your random lucky Pokemon
+  %h1.p-3= @pokemon.name
+  %img{ src: @pokemon.image_url }
