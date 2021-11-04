@@ -1,7 +1,8 @@
 # Coding Task
 ### Sample Screenshot
 
-![Pokedox sample screenshot](https://user-images.githubusercontent.com/4848551/140314087-f88a802c-fce2-4ab1-bcda-38a77c49f24b.png)
+![Pokedox sample screenshot](https://user-images.githubusercontent.com/4848551/140331174-fa1f425f-94a5-4037-9e13-5b466336d510.png)
+
 
 
 
