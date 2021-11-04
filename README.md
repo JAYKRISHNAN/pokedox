@@ -4,8 +4,14 @@
 ![Pokedox sample screenshot](https://user-images.githubusercontent.com/4848551/140331174-fa1f425f-94a5-4037-9e13-5b466336d510.png)
 
 
+### To run the application
+   -  clone this repository and go to the same directory
+   - do `bundle install`
+   - do `shotgun config.ru` to start server locally
+   - go to `http://localhost:9393/` to see the live demo of the app
 
-
+### To run the test suite
+   - do `rake test`
 
 ### Context:
 
@@ -27,13 +33,13 @@ When a user visits the index page of this application, use the [pokemon API](htt
    * Species
 * Name of the location area where the pokemon can be encountered, formatted in plain English
 
-### Notes: 
+### Notes:
 * For data about Pokemon, the source of truth is the Pokemon API. For images, please use what you think is best.
 * Expect low traffic of ~2 requests per second.
 * Users will access the site on modern devices only, no need to think about legacy browsers.
 * A simple sanity check test exists in spec/app_spec.rb. Please test your code.
-* If you need clarification on any of these points (where you would normally check in with product), please make a decision yourself and note down what the assumption you made was. 
+* If you need clarification on any of these points (where you would normally check in with product), please make a decision yourself and note down what the assumption you made was.
 
-We encourage you to think about the requirements and the above notes and be able to explain your reasoning. 
+We encourage you to think about the requirements and the above notes and be able to explain your reasoning.
 
 #### As this is a backend task, having a fancy frontend is not necessary, as long as it is easily readable and completes the requirements. Clean backend code is much more important.
