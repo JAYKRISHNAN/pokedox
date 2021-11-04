@@ -26,7 +26,8 @@ class PokemonDetailsFetcher
   end
 
   def self.total_pokemon_count
-    GetJsonApiData.json_api_response(POKEMON_INDEX_URL)['count']
+    pokemon_list_details = GetJsonApiData.json_api_response(POKEMON_INDEX_URL)
+    pokemon_list_details['count']
   end
 
   def self.pokemon_location_names(pokemon_details)
