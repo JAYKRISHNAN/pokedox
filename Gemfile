@@ -10,4 +10,6 @@ group :development do
   gem 'rack-test'
   gem 'minitest'
   gem 'rubocop'
+  gem 'webmock'
+  gem 'vcr'
 end
