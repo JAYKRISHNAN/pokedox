@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative '../utils/get_json_api_data'
+require 'ostruct'
 
 # class to get pokemon data from pokedox API
 class PokemonDetailsFetcher
@@ -10,14 +11,14 @@ class PokemonDetailsFetcher
   def self.fetch_random_pokemon_data
     details_url = POKEMON_DETAILS_URL_PREFIX + random_pokemon_id.to_s
     details = GetJsonApiData.json_api_response(details_url)
-    {
-      name: details['name'],
-      species: details['species']['name'],
-      height: details['height'],
-      weight: details['weight'],
-      image_url: details['sprites']['front_default'],
-      location_names: pokemon_location_names(details)
-    }
+    OpenStruct.new({
+                     name: details['name'],
+                     species: details['species']['name'],
+                     height: details['height'],
+                     weight: details['weight'],
+                     image_url: details['sprites']['front_default'],
+                     location_names: pokemon_location_names(details)
+                   })
   end
 
   def self.random_pokemon_id
