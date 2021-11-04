@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
-require 'net/http'
-require 'json'
+require_relative '../utils/get_json_api_data'
 
 # class to get pokemon data from pokedox API
 class PokemonDetailsFetcher
@@ -10,7 +9,7 @@ class PokemonDetailsFetcher
 
   def self.fetch_random_pokemon_data
     details_url = POKEMON_DETAILS_URL_PREFIX + random_pokemon_id.to_s
-    details = json_api_response(details_url)
+    details = GetJsonApiData.json_api_response(details_url)
     {
       name: details['name'],
       species: details['species']['name'],
@@ -26,18 +25,12 @@ class PokemonDetailsFetcher
   end
 
   def self.total_pokemon_count
-    json_api_response(POKEMON_INDEX_URL)['count']
+    GetJsonApiData.json_api_response(POKEMON_INDEX_URL)['count']
   end
 
   def self.pokemon_location_names(pokemon_details)
     location_url = pokemon_details['location_area_encounters']
-    location_details = json_api_response(location_url)
+    location_details = GetJsonApiData.json_api_response(location_url)
     location_details.map { |entry| entry['location_area']['name'] }
-  end
-
-  def self.json_api_response(url)
-    uri_object = URI(url)
-    response = Net::HTTP.get(uri_object)
-    JSON.parse(response)
   end
 end
