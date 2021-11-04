@@ -32,6 +32,11 @@ class PokemonDetailsFetcher
   def self.pokemon_location_names(pokemon_details)
     location_url = pokemon_details['location_area_encounters']
     location_details = GetJsonApiData.json_api_response(location_url)
-    location_details.map { |entry| entry['location_area']['name'] }
+    names = location_details.map { |entry| entry['location_area']['name'] }
+    names.map { |name| formatted_location_name(name) }
+  end
+
+  def self.formatted_location_name(name)
+    name.gsub('-', ' ')
   end
 end
